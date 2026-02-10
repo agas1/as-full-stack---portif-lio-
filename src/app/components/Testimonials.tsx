@@ -56,82 +56,63 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section with Image */}
-        <div className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-16 md:mb-20">
-          {/* Left - Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+        {/* Header Section */}
+        <div className="mb-12 sm:mb-16 md:mb-20">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
+            className="text-sm tracking-[0.3em] uppercase text-black/60 dark:text-white/60 mb-4"
           >
-            <div className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-xl sm:rounded-2xl overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=600&fit=crop"
-                alt="Women developers working at desk"
-                className="w-full h-full object-cover grayscale"
-                loading="lazy"
-              />
-            </div>
+            {t('testimonials.label')}
+          </motion.p>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-5xl md:text-6xl font-light tracking-tight mb-6"
+          >
+            {t('testimonials.title')}
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-black/70 dark:text-white/70 mb-8 leading-relaxed max-w-2xl"
+          >
+            {t('testimonials.description')}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="flex flex-wrap gap-4"
+          >
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="px-8 py-3 bg-black dark:bg-white text-white dark:text-black rounded-full hover:opacity-90 transition-all duration-300 font-medium"
+            >
+              {t('testimonials.bookCall')}
+            </button>
+            <button
+              onClick={() => scrollToSection('services')}
+              className="px-8 py-3 border-2 border-black/30 dark:border-white/30 text-black dark:text-white rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300 font-light"
+            >
+              {t('testimonials.seeServices')}
+            </button>
           </motion.div>
-
-          {/* Right - Content */}
-          <div className="flex flex-col justify-center">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-sm tracking-[0.3em] uppercase text-black/60 dark:text-white/60 mb-4"
-            >
-              {t('testimonials.label')}
-            </motion.p>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-5xl md:text-6xl font-light tracking-tight mb-6"
-            >
-              {t('testimonials.title')}
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-lg text-black/70 dark:text-white/70 mb-8 leading-relaxed"
-            >
-              {t('testimonials.description')}
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="flex flex-wrap gap-4"
-            >
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="px-8 py-3 bg-black dark:bg-white text-white dark:text-black rounded-full hover:opacity-90 transition-all duration-300 font-medium"
-              >
-                {t('testimonials.bookCall')}
-              </button>
-              <button
-                onClick={() => scrollToSection('services')}
-                className="px-8 py-3 border-2 border-black/30 dark:border-white/30 text-black dark:text-white rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300 font-light"
-              >
-                {t('testimonials.seeServices')}
-              </button>
-            </motion.div>
-          </div>
         </div>
 
-        {/* Testimonials Carousel */}
-        <div className="relative mb-20 overflow-hidden">
+      </div>
+
+      {/* Testimonials Carousel - full width */}
+      <div className="relative mb-20 overflow-hidden">
           {/* Left Fade Gradient */}
           <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-16 md:w-20 bg-gradient-to-r from-white dark:from-black via-white/80 dark:via-black/80 to-transparent z-10 pointer-events-none" />
 
@@ -245,7 +226,8 @@ export function Testimonials() {
           </motion.div>
         </div>
 
-        {/* Stats Section */}
+      {/* Stats Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

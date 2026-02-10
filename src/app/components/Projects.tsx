@@ -3,24 +3,24 @@ import { motion } from 'motion/react';
 
 const projects = [
   {
-    key: 'helpcenter',
-    image: '/8f62c993-ec95-4c25-b4c9-3248b87c90a2.png',
+    key: 'deskly',
+    image: '/Captura de tela 2026-02-09 195439.png',
     size: 'large',
   },
   {
-    key: 'ticketsystem',
-    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop&crop=center',
+    key: 'helpcenter',
+    image: '/8f62c993-ec95-4c25-b4c9-3248b87c90a2.png',
     size: 'medium',
   },
   {
-    key: 'smtpplatform',
-    image: 'https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=600&fit=crop&crop=center',
+    key: 'replai',
+    image: '/fec5afd6-5233-4c5b-b5d4-919977c42d5d.png',
     size: 'medium',
   },
   {
     key: 'fitnesslps',
     image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop&crop=center',
-    size: 'large',
+    size: 'medium',
   },
   {
     key: 'realestate',
@@ -57,7 +57,7 @@ export function Projects() {
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:[grid-auto-rows:280px] gap-4">
           {projects.map((project, index) => (
             <motion.div
               key={project.key}
@@ -67,8 +67,8 @@ export function Projects() {
               transition={{ delay: index * 0.08 }}
               className={`group relative overflow-hidden bg-muted rounded-lg ${
                 project.size === 'large'
-                  ? 'md:col-span-2 md:row-span-2 aspect-square md:aspect-auto'
-                  : 'aspect-square'
+                  ? 'md:col-span-2 lg:row-span-2 aspect-square md:aspect-auto'
+                  : 'aspect-square lg:aspect-auto'
               }`}
             >
               {/* Image */}
@@ -76,7 +76,9 @@ export function Projects() {
                 <img
                   src={project.image}
                   alt={t(`projects.${project.key}.title`)}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                  className={`w-full h-full object-cover group-hover:scale-110 transition-all duration-700 ${
+                    project.key === 'deskly' ? '' : 'grayscale group-hover:grayscale-0'
+                  }`}
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
