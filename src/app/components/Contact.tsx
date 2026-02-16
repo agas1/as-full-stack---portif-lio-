@@ -88,7 +88,7 @@ export function Contact() {
               <div className="flex gap-3">
                 {[
                   { icon: Github, href: '#' },
-                  { icon: Linkedin, href: '#' },
+                  { icon: Linkedin, href: 'https://www.linkedin.com/in/agatha-selbach/' },
                   { icon: Twitter, href: '#' },
                 ].map((social, index) => {
                   const Icon = social.icon;
