@@ -1,11 +1,43 @@
+# Agatha Selbach - Full Stack Developer
 
-  # Portfólio Desenvolvedora Full Stack
+Portfolio profissional desenvolvido com React, TypeScript e Tailwind CSS. Site responsivo e multilíngue (PT, EN, ES) com foco em performance e SEO.
 
-  This is a code bundle for Portfólio Desenvolvedora Full Stack. The original project is available at https://www.figma.com/design/hFdG9hHOJJBez9Unug7zMw/Portf%C3%B3lio-Desenvolvedora-Full-Stack.
+## Tech Stack
 
-  ## Running the code
+- **Frontend:** React, TypeScript, Tailwind CSS
+- **Build:** Vite
+- **Animações:** Framer Motion
+- **UI:** shadcn/ui, Lucide Icons
+- **Deploy:** Vercel
 
-  Run `npm i` to install the dependencies.
+## Funcionalidades
 
-  Run `npm run dev` to start the development server.
-  
+- Design responsivo (mobile-first)
+- Dark mode / Light mode
+- Suporte a 3 idiomas (PT-BR, EN, ES)
+- Animações suaves com Framer Motion
+- SEO otimizado com meta tags, Open Graph e JSON-LD
+- Security headers configurados via Vercel
+
+## Rodando localmente
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+## Estrutura
+
+```
+src/
+  app/
+    components/   # Componentes da aplicação
+    contexts/     # Context API (idioma)
+  main.tsx        # Entry point
+```
